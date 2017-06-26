@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="row">
+        {{ block.super }}
+        <div class="col-md-8">
+            <h1 class="heading">Add Package</h1>
+            <hr class="hr-line">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" class="button" value="Save">
+            </form>
+        </div>
+    </div>
+{% endblock %}

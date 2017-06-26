@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %} {{ activity.title }} {% endblock %}
+
+{% block content %}
+    <article>
+        <div>
+            <h1 class="heading">{{ activity.title }}</h1>
+        </div>
+        <p class="small-push-right">{{ activity.description }}</p>
+
+        <hr class="hr-line">
+
+        <section class="container_one c_1">
+            {% for package in activity.partypackage_set.all %}
+                {{ block.super }}
+                <ul class="package">
+                    <li class="each_link">
+                        <a href="{% url 'package' activity_pk=package.activity.pk package_pk=package.pk %}"
+                            class="package_links">
+                            <h3>
+                                {{ package.title }}
+                            </h3>
+                            {{ package.description }}
+                        </a>
+                    </li>
+                </ul>
+            {% endfor %}
+        </section>
+    </article>
+
+{% endblock %}

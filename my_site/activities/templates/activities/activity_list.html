@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Available Activities{% endblock %}
+
+{% block content %}
+    <div class="container_one col-md-8">
+        <div class="heading" id="act-list">
+                <h1>Activities</h1>
+        </div>
+        <hr class="hr-line">
+        {% for activity in activities %}
+            {{  block.super }}
+            <ul class="link_hov activity_links small-push"><a href="{% url 'detail' pk=activity.pk %}">
+                <li class="each_link" id="each_link2">
+                    {{ activity.title }}<br>
+                    {{ activity.description }}
+                </li>
+            </a></ul>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% load activity_extras %}
+
+{% block title %}{{ package.title }} - {{ package.activity.title }}{% endblock %}
+
+{% block content %}
+    <article>
+        <h2><a href="{% url 'detail' pk=package.activity.pk %}" class="heading">
+            {{ package.activity.title }}
+        </a></h2>
+        <hr class="hr-line">
+        <h3 class="small-push-right">{{ package.title }}</h3>
+        {{ package.content|linebreaks }}
+    </article>
+{% endblock %}

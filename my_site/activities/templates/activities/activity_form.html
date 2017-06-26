@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}New Activity{% endblock %}
+
+{% block breadcrumps %}
+    <li><a href="{% url 'activity:list' pk=activity.pk %}">{{ activity.title }}</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        {{ block.super }}
+        <div class="col-md-8">
+            <h1 class="heading">A New Activity</h1>
+            <hr class="hr-line">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" class="button" value="Save">
+            </form>
+            <hr class="hr-line">
+            <a href="{% url 'list' %}" class="small-push button">Go to the activity Page</a>
+        </div>
+    </div>
+{% endblock %}

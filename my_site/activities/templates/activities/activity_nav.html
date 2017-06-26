@@ -1,0 +1,3 @@
+{% for activity in activities %}
+    <li><a href="{% url 'activities:detail' pk=activity.pk %}">{{ activity.title }}</a></li>
+{% endfor %}
