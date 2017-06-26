@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    <h1 class="heading">Availability</h1>
+    <hr class="hr-line">
+    {% for x in items %}
+        <ul class="small-push-right">
+            <li class="small-push"><h2>{{ x.name }} - {{ x.date_start|date:"D d M Y" }}</h2></li>
+            <li class="small-push-right li-pads"><strong>Time:</strong>
+                {{ x.date_start|date:"P" }} ~ {{ x.date_end|date:"P" }}</li>
+            <li class="small-push-right li-pads"><strong>Activity:</strong> {{ x.activity|title }}</li>
+            <li class="small-push-right li-pads"><strong>Package:</strong> {{ x.package|title }}</li>
+            <li class="small-push-right li-pads"><strong>Snacks:</strong> {{ x.snack|title }}</li>
+            <li class="small-push-right li-pads"><strong>Drinks:</strong> {{ x.drink|title }}</li>
+            <li class="small-push-right li-pads"><strong>Note:</strong> {{ x.description }}</li>
+        </ul>
+        <hr class="hr-line">
+    {% endfor %}
+
+    {% if user.is_authenticated %}
+        <hr class="hr-line">
+        <a href="{% url 'create_person' %}" class="button top-small-push">Add Somebody</a>
+        <hr class="hr-line">
+    {% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{% if user.is_authenticated %}
+    <hr class="hr-line">
+    <h2 class="heading">Edit Activity</h2>
+    <a href="{% url 'create_activity' %}" class="button top-small-push">Add a New Activity</a>
+    <a href="{% url 'list' %}" class="small-push button">Go to the activity Page</a>
+
+    <hr class="hr-line">
+    <h2 class="heading">Add Person to the Availability Page</h2>
+    <a href="{% url 'create_person' %}" class="button top-small-push">Add Somebody</a>
+    <a href="{% url 'availability' %}" class="button small-push">Go to the Availability Page</a>
+
+    <hr class="hr-line">
+    <h2 class="heading">Edit Package</h2>
+    <a href="{% url 'create_package' %}" class="button top-small-push">Add a Package</a>
+{% endif %}
+{% endblock %}

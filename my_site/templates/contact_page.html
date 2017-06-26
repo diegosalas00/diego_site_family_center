@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+
+{% block content %}
+    <h1 class="heading">Contacts</h1>
+    <div class="row-p">
+        <div class="secondary col-p items item-2">
+            <h2>Corporate Headquarters</h2>
+            <ul class="ul-push">
+                <li>Corporate Headquarters</li>
+                <li>Family Entertainment Center</li>
+                <li>3900 Pleasant Valley Rd,</li>
+                <li>Mobile, AL 36609</li>
+            </ul>
+        </div>
+
+        <div class="tertiary col-p items item-3">
+            <h2>General Contact</h2>
+            <ul class="ul-push">
+                <li>Phone: (251)-382-8024</li>
+                <li>Email: familyentertainmentcenter@gmail.com</li>
+            </ul>
+        </div>
+
+        <div class=" primary-3 col-p items item-1">
+            <h2>Get Directions</h2>
+            <a class="fig" href="https://www.google.com/maps/@30.6621913,-88.1468619,15z"
+                           target="_blank">
+            <figure>
+                <img class="icon-location" src="{% static 'img/location.svg' %}" alt="location">
+                <img class="feat-img tertiary" src="{% static 'img/map.PNG' %}"
+                     alt="A Map of Davidson High School">
+                    <figcaption>
+                            <ul>
+                                <li>Family Entertainment Center</li>
+                                <li>3900 Pleasant Valley Rd,</li>
+                                <li>Mobile, AL 36609</li>
+                            </ul>
+                    </figcaption>
+            </figure>
+            </a>
+        </div>
+    </div>
+{% endblock %}

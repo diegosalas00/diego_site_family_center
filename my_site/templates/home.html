@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static from staticfiles %}
+
+{% block title %}Well Hello There{% endblock %}
+{% block content %}
+    <h1 class="heading small-push">Home</h1>
+    <hr class="hr-line">
+
+    <div class="row-p top-small-push">
+		<div class="primary-3 col-p">
+			<h2>Snacks and Drinks</h2>
+            <div class="fix_img">
+			    <img class="feat-img" src="{% static 'img/treats.svg' %}" alt="Drinks and eats">
+            </div>
+			<p>We offered variety of snacks and drinks. The snack we offered are the following:
+                Pizzas, Chips, Ice Cream, Donuts, Candies, Cookies, Hot Dogs, Hamburgers.
+            </p>
+            <p>The drinks we offered are the following:
+                Coca Cola, Dr. Pepper, Perpsi, Fanta, Sprite, Apple Juice, Capri Sun.
+            </p>
+		</div><!--/.primary-->
+
+		<div class="secondary col-p">
+			<h2>Welcome!</h2>
+			<p>We are a place where family and friends can meet up and have fun.</p>
+			<p>We offered a lot of activities from laser tag to get lit to movie night to skating rink.
+                It is too much too list all the activities because we have so many activities and all of
+                them are fun around friends and families.
+            </p>
+			<p>We also offered party packages for each activities. Each of them are unique to one another. They will
+                make your parties great in a way you never seen before.
+            </p>
+		</div><!--/.secondary-->
+
+		<div class="tertiary col-p">
+			<h2>Our Hours</h2>
+            <p>Here is a list of our hours when open during the weekdays and the weekends.</p>
+            <ul>
+			    <li class="li-pads"><strong>Monday: </strong>8:00 AM - 9:00 PM</li>
+			    <li class="li-pads"><strong>Tuesday: </strong>8:00 AM - 9:00 PM</li>
+			    <li class="li-pads"><strong>Wednesday: </strong>8:00 AM - 9:00 PM</li>
+                <li class="li-pads"><strong>Thursday: </strong>8:00 AM - 9:00 PM</li>
+                <li class="li-pads"><strong>Friday: </strong>8:00 AM - 9:00 PM</li>
+                <li class="li-pads"><strong>Saturday: </strong>6:00 AM - 10:00 PM</li>
+                <li class="li-pads"><strong>Sunday: </strong>1:00 AM - 9:00 PM</li>
+            </ul>
+		</div><!--/.tertiary-->
+	</div>
+{% endblock %}
